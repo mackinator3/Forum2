@@ -1,0 +1,56 @@
+@media screen and (min-width: 991px) {
+    .mainContainer {
+        height: 100vh;
+    }
+
+    .body {
+        border: 1px black;
+        border-style: dashed;
+        text-align: center;
+        height: 80%;
+    }
+
+    .anime {
+        
+    }
+
+    .footer {
+        text-align: center;
+        padding-top: 35px;
+        height: 100px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: red;
+    }
+    
+    .navbar {
+        height: 11vh;
+        min-height: 100px;
+    }
+    
+    .navBar {
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 10px !important;
+    }
+    
+    .NewsItem {
+        text-align: left;
+        justify-content: center;
+        margin: 5px 25px !important;
+        height: 25%;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .NewsDate {
+        text-align: center;
+        justify-content: center;
+        height: 5%;
+        margin: 10px 0 10px 0 !important;
+    }
+  }
+
+
