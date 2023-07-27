@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./Components/error-page";
 import Anime from "./Components/Anime";
+import StarWars from "./Components/StarWars"
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
     {
         path: "/Anime",
         element: <Anime />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: "/StarWars",
+        element: <StarWars />,
         errorElement: <ErrorPage />
     }
 ]);

@@ -5,15 +5,6 @@ import Row from 'react-bootstrap/Row';
 import { useState, useEffect } from 'react';
 
 export default function Anime() {
-    const [AnimeList, setAnimeList] = useState({});
-
-    useEffect(function() {
-        fetch("https://swapi.dev/api/people")
-                .then(res => res.json())
-                .then(data => setAnimeList(data.results))
-                .then(console.log(AnimeList))
-    }, [])
-
     useEffect(() => {
         async function fetchData() {
             const url = 'https://animenewsnetwork.p.rapidapi.com/reports.xml?id=155&nskip=50&nlist=50';
@@ -43,7 +34,7 @@ export default function Anime() {
                 <Navigation />
             </Row>
             <Row>
-                    <pre>{JSON.stringify(AnimeList[0], null, 2)}</pre>
+                    Anime
             </Row>
             <Row>
                 <Footer />

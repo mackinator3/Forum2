@@ -16,6 +16,7 @@ export default function Navigation() {
                 <Nav.Link href="/">Not home?</Nav.Link>
                 <Nav.Link href="Anime">Anime</Nav.Link>
                 <Nav.Link href="Videogames">Video Games</Nav.Link>
+                <Nav.Link href="StarWars">Star Wars</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
