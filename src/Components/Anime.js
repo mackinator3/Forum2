@@ -4,11 +4,19 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { useState, useEffect } from 'react';
 
-
 export default function Anime() {
+    const [AnimeList, setAnimeList] = useState({});
+
+    useEffect(function() {
+        fetch("https://swapi.dev/api/people")
+                .then(res => res.json())
+                .then(data => setAnimeList(data.results))
+                .then(console.log(AnimeList))
+    }, [])
+
     useEffect(() => {
-        async function AnimeList() {
-            const url = 'https://animenewsnetwork.p.rapidapi.com/reports.xml?id=155&nskip=10&nlist=10';
+        async function fetchData() {
+            const url = 'https://animenewsnetwork.p.rapidapi.com/reports.xml?id=155&nskip=50&nlist=50';
             const options = {
                 method: 'GET',
                 headers: {
@@ -20,13 +28,12 @@ export default function Anime() {
             try {
                 const response = await fetch(url, options);
                 const result = await response.text();
-                console.log(result);
+                console.log(result + "Anime");
             } catch (error) {
-                console.error(error);
+                console.error(error + "AnimeError");
             }
         }
-        const data = AnimeList();
-        console.log(data)
+        console.log(fetchData() + "DataFetch");
     }, []
     )
 
@@ -36,7 +43,7 @@ export default function Anime() {
                 <Navigation />
             </Row>
             <Row>
-                Test
+                    <pre>{JSON.stringify(AnimeList[0], null, 2)}</pre>
             </Row>
             <Row>
                 <Footer />
