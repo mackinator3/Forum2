@@ -3,37 +3,54 @@ import Footer from './Footer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
-import { useState, useEffect } from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { useState, useCallback } from 'react';
 
 export default function StarWars() {
-    const [Listing, setListing] = useState({});
-    const [Search, setSearch] = useState(false);
-    const [CharName, setCharName] = useState("");
-    const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-        fetch("https://swapi.dev/api/people")
-            .then(res => res.json())
-            .then(data => setListing(data.results))
+    const [currentIndex, setCurrentIndex] = useState("people");
+    const [listing, setListing] = useState([]);
+    const [charName, setCharName] = useState("");
+
+    //useEffect (function loadup () {
+    //    fetch(`https://swapi.dev/api/people`)
+    //    .then(res => res.json())
+    //    .then(data => setListing(data.results))
+    //    .then(console.log(listing + ' listing'))
+    //}, [])
+
+    const getSearch = useCallback((event) => {
+        const{value} = event.target
+        setCurrentIndex(value);
     }, [])
+    
+    function apiCall() {
+            fetch(`https://swapi.dev/api/${currentIndex}/?search=${charName}`)
+                .then(res => res.json())
+                .then(data => setListing(data.results))
+                .catch(error => console.error(error))
+        }
+
+    function callApi(value) {
+        fetch(`${value}`)
+            .then(res => res.json())
+            .then(data => setListing([data]))
+            //.then(data => console.log(data))
+            //.then(data => Object.entries(data))
+            //.then(data => console.log(data))
+            //.then(data => setListing(data.name + 'data'))
+            //.then(console.log("test"))
+            //.catch(error => console.error(error))
+    }
 
     function handleChange(event) {
         const { value } = event.target
         setCharName(value)
-        console.log(CharName + " handlechange")
     }
 
-    useEffect(function search() {
-        for (let i = 0; i < Listing.length; i++) {
-            if (Listing[i].name === CharName) {
-                setSearch(true);
-                return
-            }
-            else {
-                setSearch(false);
-            }
-        }
-    }, [CharName])
+    console.log(charName + " handlechange")
+    console.log(currentIndex + " currentIndex")
+    console.log(listing + " listing")
 
 	return (
         <Container fluid>
@@ -41,13 +58,57 @@ export default function StarWars() {
                 <Navigation />
             </Row>
             <Row>
+            <button onClick={getSearch} name="People-button" value="people">
+                People Search
+            </button>
+            <button onClick={getSearch} name="Planet-button" value="planets">
+                Planet Search
+            </button>            
+            <button onClick={getSearch} name="Films-button" value="films">
+                Film Search
+            </button>            
+            <button onClick={getSearch} name="Species-button" value="species">
+                Species Search
+            </button>            
+            <button onClick={getSearch} name="Vehicles-button" value="vehicles">
+                Vehicles Search
+            </button>            
+            <button onClick={getSearch} name="Starships-button" value="starships">
+                Starship Search
+            </button>
+            </Row>
+            <Row>
                 <Form>
-                    <Form.Group className="mb-3" controlId="formCharName">
-                        <Form.Label>Character Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter name" onChange={handleChange} />
-                    </Form.Group>
+                    <Form.Label className="Capital">{currentIndex}</Form.Label>
+                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange}/>
+                    <Form.Control type="button" value="Submit" onClick={apiCall}/>
                 </Form>
-                <Row>{Search ? "yes" : "Nope"}</Row>
+            </Row>
+            <Row>
+                <ListGroup className="swList Capital">
+                {listing.map((item, index) => (
+                    Object.entries(item).map(([key, value]) => (
+                        (
+                            typeof value === 'string' && value[0] === "h" && value[1] === "t" && value[2] === "t") ? (
+                                <ListGroup.Item key={`${index}-${key}`} action onClick={e => callApi(value)} ><strong>{key} : </strong>{item[key]}</ListGroup.Item>
+                        ) : (
+                            typeof value === 'string' && value !== "") ? (
+                                <ListGroup.Item key={`${index}-${key}`}><strong>{key} : </strong>{item[key]}</ListGroup.Item>
+                            ) : (
+                                Array.isArray(value) && value.length > 0 && (
+                                    <ListGroup.Item key={`${index}-${key}`}>
+                                        <strong>{key}:</strong>
+                                        <ul>
+                                            {value.map((item, i) => (
+                                                <ListGroup.Item key={i} action onClick={e => callApi(value[i])}>{item}</ListGroup.Item>
+                                            ))}
+                                        </ul>
+                                    </ListGroup.Item>
+                                )
+                            )
+                        ))
+                    ))}
+                </ListGroup>
             </Row>
             <Row>
                 <Footer />

@@ -1,6 +1,6 @@
 @media screen and (min-width: 991px) {
     .mainContainer {
-        height: 100vh;
+        height: 90vh;
     }
 
     .body {
@@ -9,16 +9,25 @@
         text-align: center;
         height: 80%;
     }
-
+    ul {
+       list-style-type: none;
+    }
     .anime {
-        
+    }
+
+    .Capital {
+        text-transform: capitalize;
+    }
+
+    .list-group-item {
+        color: red;
+        background-color: orange;
     }
 
     .footer {
         text-align: center;
         padding-top: 35px;
         height: 100px;
-        position: fixed;
         left: 0;
         bottom: 0;
         z-index: 1;
