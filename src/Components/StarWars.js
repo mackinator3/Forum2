@@ -12,13 +12,6 @@ export default function StarWars() {
     const [listing, setListing] = useState([]);
     const [charName, setCharName] = useState("");
 
-    //useEffect (function loadup () {
-    //    fetch(`https://swapi.dev/api/people`)
-    //    .then(res => res.json())
-    //    .then(data => setListing(data.results))
-    //    .then(console.log(listing + ' listing'))
-    //}, [])
-
     const getSearch = useCallback((event) => {
         const{value} = event.target
         setCurrentIndex(value);

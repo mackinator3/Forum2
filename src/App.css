@@ -12,7 +12,8 @@
     ul {
        list-style-type: none;
     }
-    .anime {
+    .Images > img {
+        display: none !important;
     }
 
     .Capital {
