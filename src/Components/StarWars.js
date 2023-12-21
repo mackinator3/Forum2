@@ -35,6 +35,10 @@ export default function StarWars() {
             //.then(console.log("test"))
             //.catch(error => console.error(error))
     }
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log('Event: Form Submit');
+    };
 
     function handleChange(event) {
         const { value } = event.target
@@ -71,7 +75,7 @@ export default function StarWars() {
             </button>
             </Row>
             <Row>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Label className="Capital">{currentIndex}</Form.Label>
                     <Form.Control type="text" placeholder="Enter search" onChange={handleChange}/>
                     <Form.Control type="button" value="Submit" onClick={apiCall}/>
