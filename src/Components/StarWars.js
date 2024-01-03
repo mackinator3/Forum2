@@ -21,7 +21,7 @@ export default function StarWars() {
             fetch(`https://swapi.dev/api/${currentIndex}/?search=${charName}`)
                 .then(res => res.json())
                 .then(data => setListing(data.results))
-                .catch(error => console.error(error))
+            .catch(error => console.error(error))
         }
 
     function callApi(value) {
@@ -44,10 +44,6 @@ export default function StarWars() {
         const { value } = event.target
         setCharName(value)
     }
-
-    console.log(charName + " handlechange")
-    console.log(currentIndex + " currentIndex")
-    console.log(listing + " listing")
 
 	return (
         <Container fluid>

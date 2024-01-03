@@ -42,7 +42,12 @@ const news = [
     {
         id: 9,
         date: "9/21/2023",
-        text: "Now it should only post latest 3."
+        text: "Now news items should only post latest 3."
+    },
+    {
+        id: 10,
+        date: "1/3/2024",
+        text: "Anime still needs CSS, same for Star Wars."
     }
 
 ]

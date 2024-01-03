@@ -7,6 +7,6 @@ export default function ImgButton({value}) {
     const [imgDisplay, setImgDisplay] = useState(false)
 
     return (
-        imgDisplay ? <Image src={value} alt="Anime" action onClick={(e) => setImgDisplay(!imgDisplay)}></Image> : <Button className="Images" action onClick={(e) => setImgDisplay(!imgDisplay)}>Image</Button>
+        imgDisplay ? <Image src={value} alt="Anime" action onClick={() => setImgDisplay(!imgDisplay)}></Image> : <Button className="Images" action onClick={() => setImgDisplay(!imgDisplay)}>Image</Button>
     )
 }

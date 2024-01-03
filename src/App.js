@@ -5,7 +5,6 @@ import Body from './Components/Body/Body'
 import Footer from './Components/Footer'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function App() {
     return (

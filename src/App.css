@@ -9,15 +9,20 @@
         text-align: center;
         height: 80%;
     }
+
     ul {
        list-style-type: none;
     }
+
     .Images > img {
+        
+    }
+    .hidden {
         display: none !important;
     }
 
     .Capital {
-        text-transform: capitalize;
+        text-transform: Capitalize;
     }
 
     .list-group-item {

@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ImgButton from './ImgButton'
 import Button from 'react-bootstrap/Button';
@@ -35,8 +35,8 @@ export default function Anime() {
 
     //This is used to update state for previous apiCallButton function submission.
     function handleChange(event) {
-            const { value } = event.target
-            setCharName(value)
+        const { value } = event.target;
+        setCharName(value);
     }
 
     //Recusrively break up the data objects.
@@ -63,9 +63,9 @@ export default function Anime() {
                                     <ImgButton value={ value }></ImgButton>
                                 </ListGroup.Item>
                             ) : (
-                                <ListGroup.Item key={currentKey} className="Capital" action onClick={e => apiCall(value)}><strong>{key} : </strong>{anime[key]}</ListGroup.Item>
+                                <ListGroup.Item key={currentKey} className="Capital" action onClick={(e) => apiCall(value)}><strong>{key} : </strong>{anime[key]}</ListGroup.Item>
                             ) : (
-                                key !== 'abbreviatedTitles' && key !== 'ratingFrequencies' && key !== 'id' && key !== 'createdAt' && key !== 'updatedAt' && key !== "nsfw" && key !== "meta" && key !== "relationships" && key !== "links" &&
+                            key !== 'abbreviatedTitles' && key !== 'coverImageTopOffset' && key !== 'ratingRank' && key !== 'popularityRank' && key !== 'userCount' && key !== 'favoritesCount'&& key !== 'ratingFrequencies' && key !== 'description' && key !== 'id' && key !== 'createdAt' && key !== 'updatedAt' && key !== "nsfw" && key !== "meta" && key !== "relationships" && key !== "links" &&
                                 <div key={currentKey}>
                                     {(typeof value !== 'object') ? (
                                         <ListGroup.Item className="Capital">
