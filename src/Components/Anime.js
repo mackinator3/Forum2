@@ -63,17 +63,22 @@ export default function Anime() {
                                     <ImgButton value={ value }></ImgButton>
                                 </ListGroup.Item>
                             ) : (
-                                <ListGroup.Item key={currentKey} className="Capital" action onClick={(e) => apiCall(value)}><strong>{key} : </strong>{anime[key]}</ListGroup.Item>
+                                <ListGroup.Item key={currentKey} className="Capital" action onClick={(e) => apiCall(value)}><strong>{key} :</strong>{anime[key]}</ListGroup.Item>
                             ) : (
                             key !== 'abbreviatedTitles' && key !== 'coverImageTopOffset' && key !== 'ratingRank' && key !== 'popularityRank' && key !== 'userCount' && key !== 'favoritesCount'&& key !== 'ratingFrequencies' && key !== 'description' && key !== 'id' && key !== 'createdAt' && key !== 'updatedAt' && key !== "nsfw" && key !== "meta" && key !== "relationships" && key !== "links" &&
                                 <div key={currentKey}>
                                     {(typeof value !== 'object') ? (
+                                        (key === 'type') ? (
+                                            <ListGroup.Item className="Capital type">
+                                                <strong>{key} : </strong> {value}
+                                            </ListGroup.Item>
+                                        ) : (
                                         <ListGroup.Item className="Capital">
-                                            <strong>{key}:</strong> {value}
-                                        </ListGroup.Item>
+                                            <strong>{key} : </strong> {value}
+                                        </ListGroup.Item> )
                                     ) : (
                                         <ListGroup.Item className="Capital">
-                                            <strong>{key}: </strong>
+                                            <strong>{key} : </strong>
                                             {recursiveObjects(value, currentKey)}
                                         </ListGroup.Item>
                                     )}

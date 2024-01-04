@@ -9,14 +9,14 @@ export default function Navigation() {
     <>
         <Navbar expand="lg" className="bg-body-tertiary navBar">
           <Container className="navBar">
-            <Navbar.Brand href="/">Macknation Industry</Navbar.Brand>
+            <Navbar.Brand href="/">MackNation Industry</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="Anime">Anime</Nav.Link>
                 <Nav.Link href="Videogames">Video Games</Nav.Link>
                 <Nav.Link href="StarWars">Star Wars</Nav.Link>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown" class="hidden">
+                <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="hidden">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
