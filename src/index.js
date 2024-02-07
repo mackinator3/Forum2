@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {
     createBrowserRouter,
     RouterProvider,
+    BrowserRouter,
 } from "react-router-dom";
 import ErrorPage from "./Components/error-page";
 import Anime from "./Components/Anime";
@@ -14,6 +15,7 @@ import StarWars from "./Components/StarWars"
 
 const router = createBrowserRouter([
     {
+        basename="https://mackinator3.github.io/Forum2/",
         path: "/",
         element: <App />,
         errorElement: <ErrorPage />
