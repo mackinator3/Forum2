@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         element: <StarWars />,
         errorElement: <ErrorPage />
     }
-], { basename: "/mackinator3.github.io/Forum2/" });
+], { basename: "mackinator3.github.io/Forum2/" });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
