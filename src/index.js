@@ -28,9 +28,8 @@ const router = createBrowserRouter([
         path: "/StarWars",
         element: <StarWars />,
         errorElement: <ErrorPage />
-    },
-    { basename: "/base" }
-]);
+    }
+], { basename: "/base" });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
