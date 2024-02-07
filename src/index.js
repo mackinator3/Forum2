@@ -15,7 +15,6 @@ import StarWars from "./Components/StarWars"
 
 const router = createBrowserRouter([
     {
-        basename="https://mackinator3.github.io/Forum2/",
         path: "/",
         element: <App />,
         errorElement: <ErrorPage />
@@ -29,7 +28,8 @@ const router = createBrowserRouter([
         path: "/StarWars",
         element: <StarWars />,
         errorElement: <ErrorPage />
-    }
+    },
+    { basename: "/base" }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
