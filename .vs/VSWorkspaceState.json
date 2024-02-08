@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\build",
+    "\\public",
     "\\src"
   ],
   "SelectedNode": "\\package.json",
