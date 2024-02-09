@@ -1,8 +1,12 @@
+html, body {
+    height: 100%;
+}
 .body {
-    border: 1px black;
-    border-style: dashed;
-    text-align: center;
-    height: 80%;
+ 
+}
+
+.anime {
+
 }
 
 .Capital {
@@ -10,13 +14,12 @@
 }
 
 .footer {
-    text-align: center;
-    padding-top: 35px;
-    height: 100px;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
     background-color: red;
+    min-height: 100px;
+    text-align: center;
+    padding-top: 40px;
+    position: absolute;
+    bottom: 0;
 }
 
 .hidden {
@@ -24,24 +27,20 @@
 }
 
 .NewsItem {
-    text-align: left;
-    justify-content: center;
-    margin: 5px 25px !important;
-    height: 25%;
-    overflow: scroll;
-    overflow-x: hidden;
+
 }
 
 .NewsDate {
-    text-align: center;
-    justify-content: center;
-    height: 5%;
-    margin: 10px 0 10px 0 !important;
+
 }
 
 @media screen and (min-width: 991px) {
     .mainContainer {
-        height: 90vh;
+        
+    }
+
+    .body {
+ 
     }
 
     ul {
@@ -56,49 +55,32 @@
     }
 
     .type {
-        margin-top: 10px;
+
     }
 
     .footer {
-        text-align: center;
-        padding-top: 35px;
-        height: 100px;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
-        background-color: red;
+ 
     }
     
     .navbar {
-        height: 11vh;
-        min-height: 100px;
+
     }
     
     .navBar {
-        margin: 0 !important;
-        padding: 0 !important;
-        padding-left: 10px !important;
+
     }
-    
+
     .NewsItem {
-        text-align: left;
-        justify-content: center;
-        margin: 5px 25px !important;
-        height: 25%;
-        overflow: scroll;
-        overflow-x: hidden;
+        min-height: 100px;
     }
 
     .NewsDate {
-        text-align: center;
-        justify-content: center;
-        height: 5%;
-        margin: 10px 0 10px 0 !important;
+
     }
   }
 
 
 .type {
-    margin-top: 10px;
+
 }
 

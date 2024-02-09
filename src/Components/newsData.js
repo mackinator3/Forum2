@@ -48,6 +48,11 @@ const news = [
         id: 10,
         date: "1/3/2024",
         text: "Anime still needs CSS, same for Star Wars."
+    },
+    {
+        id: 11,
+        date: "2/8/2024",
+        text: "Github pages works. I am working on CSS now."
     }
 
 ]

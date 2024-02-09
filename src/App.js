@@ -8,14 +8,14 @@ import Row from 'react-bootstrap/Row';
 
 function App() {
     return (
-        <Container fluid className="mainContainer">
+        <Container fluid class="mainContainer">
           <Row>
             <Navigation />
           </Row>
-          <Row className="body">
-            <Body />
+            <Row>
+                <Body  />
           </Row>
-          <Row>
+          <Row className="fixed-bottom">
             <Footer />
           </Row>
         </Container>

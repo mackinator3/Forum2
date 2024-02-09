@@ -1,6 +1,8 @@
 import Container from "react-bootstrap/container";
 import news from '../newsData'
 import NewsItem from './NewsItem'
+import Row from 'react-bootstrap/Row';
+
 
 export default function Body() {
 
@@ -19,7 +21,7 @@ export default function Body() {
 
     return (
         <Container>
-            {NewsItems}
+                {NewsItems}
         </Container>
     )
 }

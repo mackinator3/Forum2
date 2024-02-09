@@ -103,7 +103,7 @@ export default function StarWars() {
                     ))}
                 </ListGroup>
             </Row>
-            <Row>
+            <Row className="fixed-bottom">
                 <Footer />
             </Row>
         </Container>

@@ -105,7 +105,7 @@ export default function Anime() {
     }
 
     return (
-        <Container fluid>
+        <Container fluid className="anime">
             <Row>
                 <Navigation />
             </Row>
@@ -120,8 +120,8 @@ export default function Anime() {
                         {renderStats(stats)}         
                 </ListGroup>
             </Row>
-            <Row>
-                <Footer />
+            <Row >
+                <Footer/>
             </Row>
         </Container>
     )
