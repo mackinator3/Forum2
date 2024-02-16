@@ -15,13 +15,13 @@ export default function ErrorPage() {
             </Row>
             <Row>
                 <h1>Oops!</h1>
-                <p>Sorry, an unexpected error has occurred.</p>
+                <p>Sorry, this is a test of the error page!</p>
                 <p>
                     <i>{error.statusText || error.message}</i>
                 </p>
             </Row>
             <Row>
-                <Footer />
+                <Footer className="fixed-bottom"/>
             </Row>
         </Container>
     );

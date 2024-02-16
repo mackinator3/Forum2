@@ -14,15 +14,13 @@ html, body {
 }
 
 .footer {
-    background-color: red;
-    min-height: 100px;
-    text-align: center;
-    padding-top: 40px;
-    position: absolute;
-    bottom: 0;
+    background-image: url("Images/logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 300px;
 }
 
-.hidden {
+.hidden { 
     display: none !important;
 }
 

@@ -11,10 +11,11 @@ import Button from 'react-bootstrap/Button';
 export default function Anime() {
     const [stats, setStats] = useState({});
     const [charName, setCharName] = useState("");
-
+    const [fixedOrNot, setFixedOrNot] = useState(false)
     function handleSubmit(e) {
         e.preventDefault();
         console.log('Event: Form Submit');
+        setFixedOrNot(!fixedOrNot);
     };
 
     //This function calls the api, using the url provided by the links in the data.
@@ -39,7 +40,7 @@ export default function Anime() {
         setCharName(value);
     }
 
-    //Recusrively break up the data objects.
+    //Recursively break up the data objects.
     function recursiveObjects(anime, parentKey = '') {
         if (typeof anime === 'object' && anime !== null) {
             return Object.entries(anime).map(([key, value]) => {
@@ -121,7 +122,7 @@ export default function Anime() {
                 </ListGroup>
             </Row>
             <Row >
-                <Footer/>
+                <Footer className={fixedOrNot ? "fixed-bottom" : ""} />
             </Row>
         </Container>
     )

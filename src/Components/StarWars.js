@@ -11,6 +11,7 @@ export default function StarWars() {
     const [currentIndex, setCurrentIndex] = useState("people");
     const [listing, setListing] = useState([]);
     const [charName, setCharName] = useState("");
+    const [fixedOrNot, setFixedOrNot] = useState(false);
 
     const getSearch = useCallback((event) => {
         const{value} = event.target
@@ -38,6 +39,7 @@ export default function StarWars() {
     function handleSubmit(e) {
         e.preventDefault();
         console.log('Event: Form Submit');
+        setFixedOrNot(!fixedOrNot);
     };
 
     function handleChange(event) {
@@ -103,7 +105,7 @@ export default function StarWars() {
                     ))}
                 </ListGroup>
             </Row>
-            <Row className="fixed-bottom">
+            <Row className={fixedOrNot ? "fixed-bottom" : ""}>
                 <Footer />
             </Row>
         </Container>
