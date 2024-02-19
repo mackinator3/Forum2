@@ -12,8 +12,8 @@ function App() {
           <Row>
             <Navigation />
           </Row>
-            <Row>
-                <Body  />
+          <Row>
+            <Body  />
           </Row>
           <Row className="fixed-bottom">
             <Footer />

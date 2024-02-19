@@ -9,6 +9,14 @@ html, body {
 
 }
 
+.sectionBody {
+    min-height: 100px;
+}
+
+.lastObject {
+    border: double !important;
+}
+
 .Capital {
     text-transform: Capitalize;
 }

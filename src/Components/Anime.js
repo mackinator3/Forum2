@@ -11,11 +11,12 @@ import Button from 'react-bootstrap/Button';
 export default function Anime() {
     const [stats, setStats] = useState({});
     const [charName, setCharName] = useState("");
-    const [fixedOrNot, setFixedOrNot] = useState(false)
+    const [fixedOrNot, setFixedOrNot] = useState(true)
     function handleSubmit(e) {
         e.preventDefault();
         console.log('Event: Form Submit');
-        setFixedOrNot(!fixedOrNot);
+        apiCallButton();
+        setFixedOrNot(true);
     };
 
     //This function calls the api, using the url provided by the links in the data.

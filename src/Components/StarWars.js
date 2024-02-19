@@ -11,7 +11,7 @@ export default function StarWars() {
     const [currentIndex, setCurrentIndex] = useState("people");
     const [listing, setListing] = useState([]);
     const [charName, setCharName] = useState("");
-    const [fixedOrNot, setFixedOrNot] = useState(false);
+    const [fixedOrNot, setFixedOrNot] = useState(true);
 
     const getSearch = useCallback((event) => {
         const{value} = event.target
@@ -39,7 +39,8 @@ export default function StarWars() {
     function handleSubmit(e) {
         e.preventDefault();
         console.log('Event: Form Submit');
-        setFixedOrNot(!fixedOrNot);
+        apiCall();
+        setFixedOrNot(false);
     };
 
     function handleChange(event) {
@@ -74,34 +75,39 @@ export default function StarWars() {
             </Row>
             <Row>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Label className="Capital">{currentIndex}</Form.Label>
-                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange}/>
+                    <Form.Label className="Capital">Search {currentIndex}</Form.Label>
+                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange} />
                     <Form.Control type="button" value="Submit" onClick={apiCall}/>
                 </Form>
             </Row>
-            <Row>
+            <Row className="sectionBody">
                 <ListGroup className="swList Capital">
                 {listing.map((item, index) => (
                     Object.entries(item).map(([key, value]) => (
                         (
-                            typeof value === 'string' && value[0] === "h" && value[1] === "t" && value[2] === "t") ? (
-                                <ListGroup.Item key={`${index}-${key}`} action onClick={e => callApi(value)} ><strong>{key} : </strong>{item[key]}</ListGroup.Item>
-                        ) : (
-                            typeof value === 'string' && value !== "") ? (
-                                <ListGroup.Item key={`${index}-${key}`}><strong>{key} : </strong>{item[key]}</ListGroup.Item>
+                            typeof value === 'string' && value[0] === "h" && value[1] === "t" && value[2] === "t") ?
+                            (
+                                typeof key === 'string' && key === "url") ? (
+                                    <ListGroup.Item className="lastObject py-3 mb-4" key={`${index}-${key}`} action onClick={e => callApi(value)} ><strong>{key} : </strong>{item[key]}</ListGroup.Item>
+                            ) :
+                                (
+                                    <ListGroup.Item key={`${index}-${key}`} action onClick={e => callApi(value)} ><strong>{key} : </strong>{item[key]}</ListGroup.Item>
                             ) : (
-                                Array.isArray(value) && value.length > 0 && (
-                                    <ListGroup.Item key={`${index}-${key}`}>
-                                        <strong>{key}:</strong>
-                                        <ul>
-                                            {value.map((item, i) => (
-                                                <ListGroup.Item key={i} action onClick={e => callApi(value[i])}>{item}</ListGroup.Item>
-                                            ))}
-                                        </ul>
-                                    </ListGroup.Item>
+                                typeof value === 'string' && value !== "") ? (
+                                    <ListGroup.Item key={`${index}-${key}`}><strong>{key} : </strong>{item[key]}</ListGroup.Item>
+                                ) : (
+                                    Array.isArray(value) && value.length > 0 && (
+                                        <ListGroup.Item key={`${index}-${key}`}>
+                                            <strong>{key}:</strong>
+                                            <ul>
+                                                {value.map((item, i) => (
+                                                    <ListGroup.Item key={i} action onClick={e => callApi(value[i])}>{item}</ListGroup.Item>
+                                                ))}
+                                            </ul>
+                                        </ListGroup.Item>
+                                    )
                                 )
-                            )
-                        ))
+                            ))
                     ))}
                 </ListGroup>
             </Row>
