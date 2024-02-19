@@ -11,7 +11,7 @@ export default function StarWars() {
     const [currentIndex, setCurrentIndex] = useState("people");
     const [listing, setListing] = useState([]);
     const [charName, setCharName] = useState("");
-    const [fixedOrNot, setFixedOrNot] = useState(true);
+    const [fixedOrNot, setFixedOrNot] = useState(false);
 
     const getSearch = useCallback((event) => {
         const{value} = event.target
@@ -40,7 +40,6 @@ export default function StarWars() {
         e.preventDefault();
         console.log('Event: Form Submit');
         apiCall();
-        setFixedOrNot(false);
     };
 
     function handleChange(event) {
