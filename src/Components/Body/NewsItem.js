@@ -6,12 +6,12 @@ export default function NewsItems(props) {
     return (
         <Row>
             <Container className="">
-                <Row className='NewsDate'>
+                <Row className='NewsDate border mx-3'>
                     <p className="text-center">
                         {props.date}
                     </p>
                 </Row>
-                <Row className='NewsItem'>
+                <Row className='NewsItem border mx-3'>
                     <p className="text-center">
                         {props.text}
                     </p>

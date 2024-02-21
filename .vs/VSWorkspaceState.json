@@ -3,9 +3,10 @@
     "",
     "\\public",
     "\\src",
+    "\\src\\Components",
     "\\src\\Components\\Body",
     "\\src\\Images"
   ],
-  "SelectedNode": "\\src\\Images\\logo.png",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

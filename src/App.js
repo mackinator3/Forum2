@@ -9,11 +9,12 @@ import Row from 'react-bootstrap/Row';
 function App() {
     return (
         <Container fluid class="mainContainer">
-          <Row>
-            <Navigation />
+          <Row className="mb-3">
+                <Navigation />
           </Row>
           <Row>
-            <Body  />
+                <Body>
+                </Body>
           </Row>
           <Row className="fixed-bottom">
             <Footer />

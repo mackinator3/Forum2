@@ -20,7 +20,7 @@ export default function Body() {
     })
 
     return (
-        <Container>
+        <Container className="py-5">
                 {NewsItems}
         </Container>
     )

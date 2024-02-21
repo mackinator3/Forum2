@@ -23,6 +23,7 @@ export default function StarWars() {
                 .then(res => res.json())
                 .then(data => setListing(data.results))
             .catch(error => console.error(error))
+        setFixedOrNot(true);
         }
 
     function callApi(value) {
@@ -52,7 +53,7 @@ export default function StarWars() {
             <Row>
                 <Navigation />
             </Row>
-            <Row>
+            <Row className="pb-3">
             <button onClick={getSearch} name="People-button" value="people">
                 People Search
             </button>
@@ -72,11 +73,11 @@ export default function StarWars() {
                 Starship Search
             </button>
             </Row>
-            <Row>
+            <Row className={fixedOrNot ? "" : "mb-127px"}>
                 <Form onSubmit={handleSubmit}>
                     <Form.Label className="Capital">Search {currentIndex}</Form.Label>
-                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange} />
-                    <Form.Control type="button" value="Submit" onClick={apiCall}/>
+                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange} className="mb-3" />
+                    <Form.Control type="button" value="Submit" onClick={apiCall} className="mb-3 w-25 mx-auto" />
                 </Form>
             </Row>
             <Row className="sectionBody">
@@ -110,7 +111,7 @@ export default function StarWars() {
                     ))}
                 </ListGroup>
             </Row>
-            <Row className={fixedOrNot ? "fixed-bottom" : ""}>
+            <Row >
                 <Footer />
             </Row>
         </Container>

@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
-import { useState } from 'react';
+import { Component, useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ImgButton from './ImgButton'
 import Button from 'react-bootstrap/Button';
@@ -11,12 +11,12 @@ import Button from 'react-bootstrap/Button';
 export default function Anime() {
     const [stats, setStats] = useState({});
     const [charName, setCharName] = useState("");
-    const [fixedOrNot, setFixedOrNot] = useState(true)
+    const [fixedOrNot, setFixedOrNot] = useState(false)
+
     function handleSubmit(e) {
         e.preventDefault();
         console.log('Event: Form Submit');
         apiCallButton();
-        setFixedOrNot(true);
     };
 
     //This function calls the api, using the url provided by the links in the data.
@@ -27,12 +27,15 @@ export default function Anime() {
             .catch(error => console.error(error))
     }
 
+
+
     //This function is used to search with the input box I have provided.
     function apiCallButton() {
         fetch(`https://kitsu.io/api/edge/anime?filter[text]=${charName}`)
             .then(res => res.json())
             .then(data => setStats(data.data))
             .catch(error => console.error(error))
+        setFixedOrNot(true);
     }
 
     //This is used to update state for previous apiCallButton function submission.
@@ -111,10 +114,10 @@ export default function Anime() {
             <Row>
                 <Navigation />
             </Row>
-            <Row>
+            <Row className={fixedOrNot ? " " : "mb-457px"}>
                 <Form onSubmit={handleSubmit}>
                     <Form.Control type="text" placeholder="Enter search" onChange={handleChange}/>
-                    <Button value="Submit" onClick={apiCallButton}> Submit </Button>
+                    <Button style={ {alignSelf: 'center'}} value="Submit" onClick={apiCallButton}> Submit </Button>
                 </Form>
             </Row>
             <Row>

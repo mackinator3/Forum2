@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
 }
+
 .body {
  
 }
@@ -53,8 +54,11 @@ html, body {
        list-style-type: none;
     }
 
-    .Images > img {
-        
+    .mb-127px {
+        margin-bottom: 127px;
+    }
+    .mb-457px {
+        margin-bottom: 487px;
     }
 
     .list-group-item {
