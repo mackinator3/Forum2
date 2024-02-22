@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Forum2/static/css/main.e272a3ff.css",
-    "main.js": "/Forum2/static/js/main.b356d2a4.js",
+    "main.css": "/Forum2/static/css/main.f26b867e.css",
+    "main.js": "/Forum2/static/js/main.f2066f23.js",
     "static/js/787.f40b1e2a.chunk.js": "/Forum2/static/js/787.f40b1e2a.chunk.js",
-    "static/media/logo.png": "/Forum2/static/media/logo.ead4af0f637b7af433cf.png",
+    "static/media/logo.png": "/Forum2/static/media/logo.c953f2b1cf2efac9af65.png",
     "index.html": "/Forum2/index.html",
-    "main.e272a3ff.css.map": "/Forum2/static/css/main.e272a3ff.css.map",
-    "main.b356d2a4.js.map": "/Forum2/static/js/main.b356d2a4.js.map",
+    "main.f26b867e.css.map": "/Forum2/static/css/main.f26b867e.css.map",
+    "main.f2066f23.js.map": "/Forum2/static/js/main.f2066f23.js.map",
     "787.f40b1e2a.chunk.js.map": "/Forum2/static/js/787.f40b1e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e272a3ff.css",
-    "static/js/main.b356d2a4.js"
+    "static/css/main.f26b867e.css",
+    "static/js/main.f2066f23.js"
   ]
 }
