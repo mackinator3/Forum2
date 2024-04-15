@@ -16,7 +16,7 @@ export default function Navigation() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/Anime">Anime</Nav.Link>
-                            <Nav.Link as={Link} to="/Videogames">Video Games</Nav.Link>
+                            <Nav.Link as={Link} to="/Videogames" className="hidden">Video Games</Nav.Link>
                             <Nav.Link as={Link} to="/StarWars">Star Wars</Nav.Link>
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="hidden">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

@@ -3,8 +3,6 @@
     "",
     "\\public",
     "\\src",
-    "\\src\\Components",
-    "\\src\\Components\\Body",
     "\\src\\Images"
   ],
   "SelectedNode": "\\.gitignore",
