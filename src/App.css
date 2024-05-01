@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    height: 100vh;
 }
 
 .body {
@@ -10,6 +10,10 @@ html, body {
 
 }
 
+.form-control {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .sectionBody {
     min-height: 100px;
 }
@@ -40,6 +44,12 @@ html, body {
 .NewsDate {
 
 }
+
+.Type {
+    border: solid red !important;
+    margin-top: 10px;
+}
+
 
 @media screen and (min-width: 991px) {
     .mainContainer {
@@ -88,9 +98,27 @@ html, body {
 
     }
   }
+@media screen and (min-width: 480px) and (max-width: 990px) {
+    .mb-127px {
+        margin-bottom: 127px;
+    }
 
+    .mb-457px {
+        margin-bottom: 487px;
+    }
+}
 
-.type {
+@media screen and (max-width: 480px) {
+    .NewsItem {
+        
+    }
 
+    .mb-127px {
+        margin-bottom: 127px;
+    }
+
+    .mb-457px {
+        margin-bottom: 487px;
+    }
 }
 

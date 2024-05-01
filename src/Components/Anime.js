@@ -74,7 +74,7 @@ export default function Anime() {
                                 <div key={currentKey}>
                                     {(typeof value !== 'object') ? (
                                         (key === 'type') ? (
-                                            <ListGroup.Item className="Capital type">
+                                            <ListGroup.Item className="Capital Type">
                                                 <strong>{key} : </strong> {value}
                                             </ListGroup.Item>
                                         ) : (
