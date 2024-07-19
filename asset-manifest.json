@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Forum2/static/css/main.768d3452.css",
-    "main.js": "/Forum2/static/js/main.3c3c56c3.js",
+    "main.js": "/Forum2/static/js/main.c01dffd3.js",
     "static/js/787.f40b1e2a.chunk.js": "/Forum2/static/js/787.f40b1e2a.chunk.js",
     "static/media/logo.png": "/Forum2/static/media/logo.c953f2b1cf2efac9af65.png",
     "index.html": "/Forum2/index.html",
     "main.768d3452.css.map": "/Forum2/static/css/main.768d3452.css.map",
-    "main.3c3c56c3.js.map": "/Forum2/static/js/main.3c3c56c3.js.map",
+    "main.c01dffd3.js.map": "/Forum2/static/js/main.c01dffd3.js.map",
     "787.f40b1e2a.chunk.js.map": "/Forum2/static/js/787.f40b1e2a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.768d3452.css",
-    "static/js/main.3c3c56c3.js"
+    "static/js/main.c01dffd3.js"
   ]
 }
