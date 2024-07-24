@@ -1,4 +1,4 @@
-html, body {
+html, body, #root {
     height: 100vh;
 }
 
@@ -7,7 +7,7 @@ html, body {
 }
 
 .anime {
-
+    height: 100vh;
 }
 
 .form-control {
@@ -68,7 +68,7 @@ html, body {
         margin-bottom: 127px;
     }
     .mb-457px {
-        margin-bottom: 487px;
+        margin-top: 487px !important;
     }
 
     .list-group-item {

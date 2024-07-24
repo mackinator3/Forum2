@@ -11,7 +11,8 @@ import Button from 'react-bootstrap/Button';
 export default function Anime() {
     const [stats, setStats] = useState({});
     const [charName, setCharName] = useState("");
-    const [fixedOrNot, setFixedOrNot] = useState(false)
+    const [fixedOrNot, setFixedOrNot] = useState(true);
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -35,7 +36,7 @@ export default function Anime() {
             .then(res => res.json())
             .then(data => setStats(data.data))
             .catch(error => console.error(error))
-        setFixedOrNot(true);
+            .finally(setFixedOrNot(false));
     }
 
     //This is used to update state for previous apiCallButton function submission.
@@ -91,7 +92,7 @@ export default function Anime() {
                 );
             });
         } else {
-            return <ListGroup.Item key={`${parentKey}-error`}><strong> Error finding data </strong></ListGroup.Item>;
+            return <ListGroup.Item key={`${parentKey}-error`}><strong> Error Loading Data </strong></ListGroup.Item>;
         }
     }
 
@@ -106,7 +107,6 @@ export default function Anime() {
                 {recursiveObjects(stats)}       
             </ListGroup>
                 );
-
     }
 
     return (
@@ -114,10 +114,10 @@ export default function Anime() {
             <Row>
                 <Navigation />
             </Row>
-            <Row className={fixedOrNot ? " " : "mb-457px"}>
+            <Row>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange}/>
-                    <Button style={ {alignSelf: 'center'}} value="Submit" onClick={apiCallButton}> Submit </Button>
+                    <Form.Control type="text" placeholder="Enter search" onChange={handleChange} className="mb-3" />
+                    <Form.Control type="button" value="Submit" onClick={apiCallButton} className="mb-3 w-25 mx-auto" />
                 </Form>
             </Row>
             <Row>
@@ -125,8 +125,8 @@ export default function Anime() {
                         {renderStats(stats)}         
                 </ListGroup>
             </Row>
-            <Row >
-                <Footer className={fixedOrNot ? "fixed-bottom" : ""} />
+            <Row className={fixedOrNot ? "fixed-bottom" : ""}>
+                <Footer />
             </Row>
         </Container>
     )

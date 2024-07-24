@@ -19,11 +19,11 @@ export default function StarWars() {
     }, [])
     
     function apiCall() {
-            fetch(`https://swapi.dev/api/${currentIndex}/?search=${charName}`)
-                .then(res => res.json())
-                .then(data => setListing(data.results))
+        fetch(`https://swapi.dev/api/${currentIndex}/?search=${charName}`)
+            .then(res => res.json())
+            .then(data => setListing(data.results))
             .catch(error => console.error(error))
-        setFixedOrNot(true);
+            .finally(setFixedOrNot(true));
         }
 
     function callApi(value) {
@@ -73,7 +73,7 @@ export default function StarWars() {
                 Starship Search
             </button>
             </Row>
-            <Row className={fixedOrNot ? "" : "mb-127px"}>
+            <Row>
                 <Form onSubmit={handleSubmit}>
                     <Form.Label className="Capital">Search {currentIndex}</Form.Label>
                     <Form.Control type="text" placeholder="Enter search" onChange={handleChange} className="mb-3" />
@@ -111,7 +111,7 @@ export default function StarWars() {
                     ))}
                 </ListGroup>
             </Row>
-            <Row >
+            <Row className={fixedOrNot ? "" : "fixed-bottom"}>
                 <Footer />
             </Row>
         </Container>
